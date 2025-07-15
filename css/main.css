@@ -1571,3 +1571,10 @@ p {
   display: block;
   text-align: center;
 } 
+
+@media (max-width: 768px) {
+  .legal-header .section-subtitle {
+    margin-top: 1.2rem;
+    display: block;
+  }
+} 
