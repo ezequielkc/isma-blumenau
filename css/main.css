@@ -156,6 +156,8 @@ p {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 .logo img {
@@ -1576,5 +1578,11 @@ p {
   .legal-header .section-subtitle {
     margin-top: 1.2rem;
     display: block;
+  }
+} 
+
+@media (max-width: 768px) {
+  .legal-content {
+    padding-top: 90px;
   }
 } 
