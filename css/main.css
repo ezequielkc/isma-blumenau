@@ -1562,3 +1562,12 @@ p {
     padding-bottom: 0;
   }
 } 
+
+.credito-dourado {
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+} 
