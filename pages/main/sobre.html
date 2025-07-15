@@ -2,9 +2,28 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="pt-BR">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - UFF - Underground Fight and Fitness Blumenau</title>
+  <title>Sobre a UFF Blumenau | Nossa História e Missão</title>
+  <meta name="description" content="Conheça a história, missão e valores da UFF Blumenau. Academia credenciada ISMA, referência em defesa pessoal e artes marciais em Blumenau.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="UFF Blumenau">
+  <link rel="canonical" href="https://uffblumenau.com.br/sobre">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Sobre a UFF Blumenau | Nossa História e Missão">
+  <meta property="og:description" content="Conheça a história, missão e valores da UFF Blumenau. Academia credenciada ISMA, referência em defesa pessoal e artes marciais em Blumenau.">
+  <meta property="og:url" content="https://uffblumenau.com.br/sobre">
+  <meta property="og:site_name" content="UFF Blumenau">
+  <meta property="og:image" content="https://uffblumenau.com.br/assets/capa-home.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sobre a UFF Blumenau | Nossa História e Missão">
+  <meta name="twitter:description" content="Conheça a história, missão e valores da UFF Blumenau. Academia credenciada ISMA, referência em defesa pessoal e artes marciais em Blumenau.">
+  <meta name="twitter:image" content="https://uffblumenau.com.br/assets/capa-home.jpg">
+  <!-- Fim SEO técnico -->
   <link rel="stylesheet" href="../../css/links.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +31,8 @@
   <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
   <header class="header" id="header-principal">
     <nav class="nav container">
-      <div class="logo">
+      <div class="logo logo-dupla">
+        <img src="../../assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="logo-uff-header">
         <img src="../../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo">
       </div>
       <ul class="nav-menu">
@@ -22,8 +42,9 @@
         <li><a href="/horarios" class="nav-link">Horários</a></li>
         <li><a href="/contato" class="nav-link">Contato</a></li>
       </ul>
-      <a href="https://wa.me/554799977632" class="whatsapp-btn" target="_blank" rel="noopener">
-        
+      <a href="https://wa.me/554799977632" class="whatsapp-btn" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5em;font-size:1.15em;padding:0.7em 1.4em;background:#25d366;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(37,211,102,0.08);transition:background 0.2s;">
+        <i class="fab fa-whatsapp"></i>
+        Fale no WhatsApp
       </a>
       <button class="mobile-menu-btn" aria-label="Menu mobile">
         <i class="fas fa-bars"></i>
@@ -49,7 +70,10 @@
           <h2 class="section-title">Nossa História</h2>
           <p class="section-subtitle">Uma jornada de paixão e dedicação às artes marciais</p>
         </div>
-        <div class="about-content">
+        <div class="about-content about-content-flex">
+          <div class="about-logo">
+            <img src="../../assets/logo-uff.jpg" alt="Logo UFF Blumenau" />
+          </div>
           <div class="about-text">
             <p>
               Fundada em Blumenau-SC, a UFF nasceu da paixão pelas artes marciais tradicionais e do compromisso com a excelência no ensino. Nossa missão é tornar as artes marciais acessíveis a todos, promovendo desenvolvimento pessoal, disciplina e autodefesa para todas as idades.
@@ -61,6 +85,45 @@
         </div>
       </div>
     </section>
+
+    <style>
+      .about-content-flex {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        justify-content: center;
+      }
+      .about-logo {
+        flex: 0 0 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .about-logo img {
+        max-width: 340px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .about-text {
+        flex: 1 1 320px;
+      }
+      @media (max-width: 800px) {
+        .about-content-flex {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .about-logo {
+          margin-bottom: 0.5rem;
+        }
+        .about-logo img {
+          max-width: 255px;
+        }
+        .about-text {
+          text-align: center;
+        }
+      }
+    </style>
 
     <!-- ===================== MISSÃO, VISÃO E VALORES ===================== -->
     <section class="section section-valores">
@@ -129,6 +192,9 @@
         <div class="section-header">
           <h2 class="section-title">Sobre a ISMA</h2>
           <p class="section-subtitle">International Society of Martial Arts</p>
+        </div>
+        <div class="isma-logo" style="text-align:center; margin-bottom: 2rem;">
+          <img src="../../assets/logo-isma-site.png" alt="Logo ISMA" style="max-width:550px;width:100%;height:auto;display:inline-block;">
         </div>
         <div class="isma-content">
           <div class="isma-card">
