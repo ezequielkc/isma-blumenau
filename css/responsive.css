@@ -16,6 +16,9 @@
 }
 
 @media (max-width: 768px) {
+  body, p, h1, h2, h3, h4, h5, h6, li, ul, ol, section, .container, .sobre-academia, .filosofia-wyngtjun, .modalidades, .para-quem, .horarios-planos, .localizacao, .depoimentos, .contato, .credenciamento-isma {
+    text-align: center !important;
+  }
   .header-fixo {
     padding: 0.5rem 0;
   }

@@ -1385,3 +1385,167 @@ p {
     font-size: 1.1rem;
   }
 } 
+
+@media (max-width: 768px) {
+  body, p, h1, h2, h3, h4, h5, h6, li, ul, ol, .section, .container, .about-text, .master-profile, .isma-section, .isma-content, .isma-card, .philosophy-content, .philosophy-text, .values-grid, .principles-grid, .depoimentos, .depoimento, .formulario-contato, .contato-info, .footer-content, .footer-social, .footer-column, .footer-bottom {
+    text-align: center !important;
+  }
+} 
+
+/* ===================== DIFERENCIAIS RÁPIDOS E DA UFF ===================== */
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+}
+.diferencial-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  transition: var(--transition);
+  border-top: 4px solid var(--accent);
+}
+.diferencial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.diferencial-card i {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: var(--spacing-md);
+}
+.diferencial-card h3 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
+}
+.diferencial-card p {
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* ===================== DEPOIMENTOS HOME ===================== */
+.section-depoimentos {
+  background: var(--light-gray);
+  padding: var(--spacing-xxl) 0;
+}
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+.depoimento-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+  text-align: center;
+  font-style: italic;
+  border-left: 4px solid var(--secondary);
+  transition: var(--transition);
+}
+.depoimento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.depoimento-card span {
+  display: block;
+  margin-top: var(--spacing-md);
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* ===================== CHAMADA PARA AÇÃO HOME ===================== */
+.section-cta {
+  background: var(--gradient-primary);
+  color: var(--white);
+  text-align: center;
+  padding: var(--spacing-xxl) 0;
+}
+.section-cta .section-title {
+  color: var(--accent);
+}
+.section-cta .section-subtitle {
+  color: var(--white-custom);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ===================== MINI-SEÇÃO ISMA HOME ===================== */
+.section-isma-mini {
+  background: var(--white);
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+.isma-mini-content h3 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-sm);
+}
+.isma-mini-content p {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ===================== SOCIAL E LOCALIZAÇÃO HOME ===================== */
+.section-social-location {
+  background: var(--light-gray);
+  padding: var(--spacing-xxl) 0;
+}
+.social-location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  align-items: start;
+}
+.social-block, .location-block {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+.social-block h4, .location-block h4 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-md);
+}
+.social-block a {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+  display: inline-block;
+  transition: color 0.2s;
+}
+.social-block a:hover {
+  color: var(--accent);
+}
+.location-block p {
+  color: var(--text);
+  margin-bottom: var(--spacing-md);
+}
+.location-block a {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.location-block a:hover {
+  color: var(--accent);
+}
+
+/* ===================== RESPONSIVIDADE PARA NOVAS SEÇÕES ===================== */
+@media (max-width: 900px) {
+  .diferenciais-grid, .depoimentos-grid, .social-location-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .diferenciais-grid, .depoimentos-grid, .social-location-grid {
+    grid-template-columns: 1fr;
+  }
+} 
