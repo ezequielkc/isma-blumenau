@@ -1,0 +1,114 @@
+/* ===================== RESET E VARIÁVEIS ===================== */
+:root {
+  --cor-primaria: #2c5aa0;
+  --cor-secundaria: #8b4513;
+  --cor-destaque: #f8f9fa;
+  --cor-fundo: #ffffff;
+  --cor-texto: #2c3e50;
+  --cor-texto-invertido: #ffffff;
+  --cor-cinza: #6c757d;
+  --cor-borda: #e9ecef;
+  --cor-header: #ffffff;
+  --cor-footer: #2c5aa0;
+  --cor-accent: #28a745;
+  --cor-success: #20c997;
+  --cor-warning: #ffc107;
+  --cor-paz: #e3f2fd;
+  --cor-educacao: #f3e5f5;
+  --cor-disciplina: #fff3e0;
+  --fonte-principal: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  --raio-borda: 8px;
+  --sombra-leve: 0 2px 8px rgba(44, 90, 160, 0.08);
+  --sombra-media: 0 4px 16px rgba(44, 90, 160, 0.12);
+  --gradiente-primario: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
+  --gradiente-secundario: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+  --gradiente-paz: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  --gradiente-educacao: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  --gradiente-disciplina: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  font-size: 1rem;
+  min-height: 100vh;
+}
+
+img, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover, a:focus {
+  color: var(--cor-secundaria);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--raio-borda);
+  background: var(--cor-primaria);
+  color: var(--cor-texto-invertido);
+  padding: 0.75em 1.5em;
+  transition: background 0.2s;
+}
+
+button:hover, button:focus {
+  background: var(--cor-secundaria);
+}
+
+section {
+  padding: 3rem 0 2rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sombra {
+  box-shadow: var(--sombra-leve);
+}
+
+.texto-centralizado {
+  text-align: center;
+}

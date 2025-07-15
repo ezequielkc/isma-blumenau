@@ -1,0 +1,143 @@
+/* ===================== RESPONSIVIDADE GERAL ===================== */
+@media (max-width: 1024px) {
+  .container, .sobre-academia, .filosofia-wyngtjun, .modalidades, .para-quem, .horarios-planos, .localizacao, .depoimentos, .contato, .credenciamento-isma {
+    width: 98%;
+    padding: 2rem 1rem;
+  }
+  .menu-navegacao {
+    gap: 1rem;
+  }
+  .modalidades-cards, .publico-segmentos, .horarios-modalidades, .planos-blocos, .depoimentos-lista {
+    gap: 1rem;
+  }
+  .isma-info {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-fixo {
+    padding: 0.5rem 0;
+  }
+  #navegacao-principal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+  }
+  .menu-navegacao {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+  .hero {
+    padding: 3rem 0 2rem 0;
+  }
+  .hero-titulo {
+    font-size: 1.6rem;
+  }
+  .modalidades-cards, .publico-segmentos, .horarios-modalidades, .planos-blocos, .depoimentos-lista {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modalidade-card, .segmento, .horario-modalidade, .plano, .depoimento {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .tabela-horarios table, .tabela-horarios th, .tabela-horarios td {
+    font-size: 0.95rem;
+  }
+  .isma-info {
+    gap: 1rem;
+  }
+  .isma-descricao, .isma-historia, .isma-padrao {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-fixo {
+    padding: 0.2rem 0;
+  }
+  #navegacao-principal {
+    padding: 0.5rem 0.3rem;
+  }
+  .logo-nome #logo-placeholder {
+    font-size: 1.1rem;
+  }
+  .logo-imagem {
+    height: 60px;
+    max-width: 220px;
+  }
+  .hero {
+    padding: 2rem 0 1rem 0;
+  }
+  .hero-titulo {
+    font-size: 1.1rem;
+  }
+  .cta-botao {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  section {
+    padding: 1.2rem 0 1rem 0;
+  }
+  .sobre-academia, .filosofia-wyngtjun, .modalidades, .para-quem, .horarios-planos, .localizacao, .depoimentos, .contato, .credenciamento-isma {
+    padding: 1.2rem 0.3rem;
+  }
+  .formulario-contato {
+    padding: 1rem 0.5rem;
+  }
+  .tabela-horarios th, .tabela-horarios td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.85rem;
+  }
+  .rodape {
+    padding: 1rem 0 0.5rem 0;
+  }
+  .rodape-menu ul {
+    gap: 0.3rem;
+  }
+  .isma-descricao, .isma-historia, .isma-padrao {
+    padding: 0.8rem 0.8rem;
+  }
+  .isma-descricao h3, .isma-historia h3, .isma-padrao h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===================== RODAPÉ RESPONSIVO ===================== */
+@media (max-width: 768px) {
+  .rodape-conteudo {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .rodape-coluna {
+    text-align: center;
+  }
+  
+  .rodape-coluna h4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .rodape-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rodape-menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .rodape-sociais {
+    align-items: center;
+  }
+  
+  .rodape-sociais a {
+    justify-content: center;
+    min-width: 200px;
+  }
+}
