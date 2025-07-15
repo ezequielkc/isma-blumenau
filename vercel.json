@@ -2,29 +2,11 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/sobre",
-      "destination": "/pages/main/sobre.html"
-    },
-    {
-      "source": "/modalidades",
-      "destination": "/pages/main/modalidades.html"
-    },
-    {
-      "source": "/horarios",
-      "destination": "/pages/main/horarios.html"
-    },
-    {
-      "source": "/contato",
-      "destination": "/pages/main/contato.html"
-    },
-    {
-      "source": "/politica-privacidade",
-      "destination": "/pages/legal/politica-privacidade.html"
-    },
-    {
-      "source": "/termos-uso",
-      "destination": "/pages/legal/termos-uso.html"
-    }
+    { "source": "/sobre", "destination": "/sobre.html" },
+    { "source": "/modalidades", "destination": "/modalidades.html" },
+    { "source": "/horarios", "destination": "/horarios.html" },
+    { "source": "/contato", "destination": "/contato.html" },
+    { "source": "/politica-privacidade", "destination": "/politica-privacidade.html" },
+    { "source": "/termos-uso", "destination": "/termos-uso.html" }
   ]
 } 
