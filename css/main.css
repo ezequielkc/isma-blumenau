@@ -1143,7 +1143,7 @@ p {
     border: none !important;
     order: 3;
     margin-left: auto;
-    color: #fff !important;
+    color: #111 !important; /* preto por padrão */
     z-index: 1001;
     transition: color 0.2s, background 0.2s;
   }
