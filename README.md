@@ -167,16 +167,6 @@ O projeto está configurado para deploy automático na Vercel:
 - Core Web Vitals otimizados
 - Indexação verificada via Search Console
 
-## Contato Técnico
-
-Para questões relacionadas ao desenvolvimento e manutenção do sistema:
-
-**Academia UFF Blumenau**
-- Responsável: Sifu Angel Samaniego
-- WhatsApp: (47) 99977-6320
-- Instagram: @sifu_angel_samaniego
-- Academia: @uffbnu
-
 ---
 
 Documentação técnica atualizada em: 23/07/2025
