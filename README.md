@@ -108,12 +108,6 @@ Defesa Pessoal Blumenau/
 
 ### Deploy Local
 ```bash
-# Clonar o repositório
-git clone [repository-url]
-
-# Navegar para o diretório
-cd "Defesa Pessoal Blumenau"
-
 # Servir arquivos localmente
 python -m http.server 8000
 # ou
