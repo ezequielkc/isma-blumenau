@@ -169,6 +169,4 @@ O projeto está configurado para deploy automático na Vercel:
 
 ---
 
-Documentação técnica atualizada em: 23/07/2025
-Versão do sistema: 1.0.0
-Compatibilidade: Navegadores modernos (Chrome 60+, Firefox 60+, Safari 12+, Edge 79+)
+Documentação atualizada em: 23/07/2025
