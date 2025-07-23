@@ -31,18 +31,15 @@
     }
 
     .welcome-section {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
       padding: 3rem 2.5rem;
       margin-bottom: 3rem;
-      box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.25),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       max-width: 800px;
       width: 100%;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .welcome-logos {
@@ -76,11 +73,11 @@
     }
 
     .wisdom-quote {
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      background: #f8fafc;
       border-left: 4px solid #b22222;
       padding: 1.5rem;
       margin: 2rem 0;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 4px 4px 0;
       font-style: italic;
       color: #374151;
       position: relative;
@@ -88,7 +85,7 @@
 
     .wisdom-quote::before {
       content: '"';
-      font-size: 3rem;
+      font-size: 2rem;
       color: #b22222;
       position: absolute;
       top: 0.5rem;
@@ -118,64 +115,31 @@
     }
 
     .path-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
-      backdrop-filter: blur(15px);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
       padding: 2.5rem;
-      box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .path-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .path-card:hover::before {
-      left: 100%;
     }
 
     .path-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 
-        0 35px 60px rgba(0, 0, 0, 0.25),
-        0 0 0 1px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
     .path-icon {
-      width: 90px;
-      height: 90px;
-      background: linear-gradient(135deg, #b22222, #8b0000);
+      width: 80px;
+      height: 80px;
+      background: #b22222;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 2rem;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: white;
-      box-shadow: 
-        0 15px 30px rgba(178, 34, 34, 0.4),
-        inset 0 2px 0 rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .path-card:hover .path-icon {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 
-        0 20px 40px rgba(178, 34, 34, 0.5),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
     }
 
     .path-title {
@@ -215,113 +179,45 @@
     }
 
     .path-button {
-      background: linear-gradient(135deg, #b22222, #8b0000);
+      background: #b22222;
       color: white;
-      padding: 1.2rem 2.5rem;
+      padding: 1rem 2rem;
       border: none;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: background-color 0.2s ease;
       width: 100%;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      box-shadow: 
-        0 8px 25px rgba(178, 34, 34, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .path-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .path-button:hover::before {
-      left: 100%;
+      gap: 0.5rem;
+      box-shadow: 0 2px 6px rgba(178, 34, 34, 0.2);
     }
 
     .path-button:hover {
-      background: linear-gradient(135deg, #8b0000, #660000);
+      background: #8b0000;
       color: white;
       text-decoration: none;
-      transform: translateY(-3px);
-      box-shadow: 
-        0 15px 35px rgba(178, 34, 34, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
-    .path-button:active {
-      transform: translateY(-1px);
-    }
 
-    .user-header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .user-greeting {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .user-greeting i {
-      color: #b22222;
-      font-size: 1.5rem;
-    }
-
-    .greeting-text h2 {
-      margin: 0;
-      color: #1f2937;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .greeting-text p {
-      margin: 0;
-      color: #6b7280;
-      font-size: 0.95rem;
-    }
 
     .logout-btn {
-      background: linear-gradient(135deg, #dc3545, #b02a37);
+      background: #dc3545;
       color: white;
       border: none;
       padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: background-color 0.2s ease;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
-    }
-
-    .logout-btn:hover {
-      background: linear-gradient(135deg, #b02a37, #962025);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+      box-shadow: 0 2px 6px rgba(220, 53, 69, 0.2);
     }
 
     .logout-btn:hover {
@@ -359,16 +255,7 @@
         gap: 1.5rem;
       }
 
-      .user-header {
-        padding: 1.25rem 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
 
-      .greeting-text h2 {
-        font-size: 1.25rem;
-      }
 
       .path-card {
         padding: 1.5rem;
@@ -401,7 +288,7 @@
       }
 
       .wisdom-quote::before {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .wisdom-text {
@@ -409,22 +296,7 @@
         font-size: 0.95rem;
       }
 
-      .user-header {
-        padding: 1rem;
-      }
 
-      .user-greeting {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .greeting-text h2 {
-        font-size: 1.1rem;
-      }
-
-      .greeting-text p {
-        font-size: 0.85rem;
-      }
     }
   </style>
 </head>
@@ -537,26 +409,13 @@
 
   <main>
     <div class="dashboard-container">
-      <div class="user-header">
-        <div class="user-greeting">
-          <i class="fas fa-user-graduate"></i>
-          <div class="greeting-text">
-            <h2>Bem-vindo, Aluno!</h2>
-            <p>Escolha seu caminho de desenvolvimento</p>
-          </div>
-        </div>
-        <button id="logoutBtn" class="logout-btn">
-          <i class="fas fa-sign-out-alt"></i> Sair
-        </button>
-      </div>
-
       <div class="welcome-section">
         <div class="welcome-logos">
           <img src="../assets/logo-uff.jpg" alt="Logo UFF Blumenau">
           <img src="../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo">
         </div>
         <h1 class="welcome-title">Bem-vindo à Área do Aluno</h1>
-        <p class="welcome-subtitle">Escolha seu caminho de desenvolvimento no I.S.M.A. Wyng Tjun</p>
+        <p class="welcome-subtitle">Selecione o caminho de desenvolvimento no I.S.M.A. Wyng Tjun que você se encontra</p>
 
         <div class="wisdom-quote">
           <div class="wisdom-text">
@@ -606,6 +465,12 @@
             <span>Acessar Caminho</span>
           </a>
         </div>
+      </div>
+
+      <div class="logout-section" style="margin-top: 3rem; text-align: center;">
+        <button id="logoutBtn" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </button>
       </div>
     </div>
   </main>
