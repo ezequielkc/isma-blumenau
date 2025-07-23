@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Meta tags serão inseridas automaticamente via componente SEO -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
+  <!-- Header será inserido automaticamente via HeaderComponent -->
+
+  <main>
+    <!-- ===================== HERO SECTION ===================== -->
+    <!-- Hero será inserido automaticamente via HeroComponent -->
+
+    <!-- ===================== CONTEÚDO DA PÁGINA ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Conteúdo da Página</h2>
+          <p class="section-subtitle">Esta é uma página de exemplo usando componentes</p>
+        </div>
+        
+        <div class="content">
+          <p>Este exemplo demonstra como usar os componentes UFF para criar páginas mais eficientes e organizadas.</p>
+          
+          <h3>Vantagens dos Componentes:</h3>
+          <ul>
+            <li>Código DRY (Don't Repeat Yourself)</li>
+            <li>Manutenção centralizada</li>
+            <li>Consistência visual garantida</li>
+            <li>Facilidade para criar novas páginas</li>
+            <li>SEO automatizado</li>
+          </ul>
+          
+          <h3>Exemplo de Botão WhatsApp Inline:</h3>
+          <div class="whatsapp-demo">
+            <!-- Botão WhatsApp será inserido aqui via componente -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA SECTION ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Pronto para Começar?</h2>
+          <p class="section-subtitle">Entre em contato conosco</p>
+        </div>
+        
+        <div class="cta-content text-center">
+          <!-- Botão CTA WhatsApp será inserido aqui -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <!-- Footer será inserido automaticamente via FooterComponent -->
+
+  <!-- ===================== BOTÃO WHATSAPP FLUTUANTE ===================== -->
+  <!-- Botão flutuante será inserido automaticamente via WhatsAppButtonComponent -->
+
+  <!-- ===================== SCRIPTS DOS COMPONENTES ===================== -->
+  <script src="/components/seo-meta.js"></script>
+  <script src="/components/header.js"></script>
+  <script src="/components/hero.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/whatsapp-button.js"></script>
+  <script src="/components/common-scripts.js"></script>
+  <script src="/components/index.js"></script>
+  <script src="/js/header.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ===================== INICIALIZAÇÃO DOS COMPONENTES =====================
+      
+      // 1. Inicializar SEO Meta Tags
+      SEOMetaComponent.inject({
+        title: 'Exemplo de Página | UFF Blumenau',
+        description: 'Página de exemplo demonstrando o uso dos componentes UFF.',
+        canonical: 'https://defesapessoalblumenau.com.br/exemplo'
+      });
+
+      // 2. Inicializar Hero Section
+      const heroHTML = HeroComponent.createPageHero('sobre', {
+        title: 'Página de Exemplo',
+        subtitle: 'Demonstração dos componentes UFF'
+      });
+      document.querySelector('main').insertAdjacentHTML('afterbegin', heroHTML);
+
+      // 3. Inicializar Footer (se não existir)
+      if (!document.querySelector('.footer')) {
+        const footerComponent = new FooterComponent();
+        footerComponent.render();
+      }
+
+      // 4. Inicializar Botões WhatsApp
+      
+      // Botão inline na seção demo
+      const inlineButton = WhatsAppButtonComponent.createContactButton({
+        text: 'Falar com Instrutor',
+        message: 'Olá! Vi a página de exemplo e gostaria de mais informações.'
+      });
+      document.querySelector('.whatsapp-demo').innerHTML = inlineButton;
+
+      // Botão CTA na seção final
+      const ctaButton = WhatsAppButtonComponent.createCTAButton({
+        message: 'Vim pela página de exemplo e quero começar!'
+      });
+      document.querySelector('.cta-content').innerHTML = ctaButton;
+
+      // Botão flutuante
+      const floatingButton = WhatsAppButtonComponent.createFloatingButton();
+      document.body.insertAdjacentHTML('beforeend', floatingButton);
+
+      // 5. Inicializar Scripts Comuns
+      // (Já inicializado automaticamente via CommonScriptsComponent)
+
+      // ===================== INICIALIZAÇÃO SIMPLIFICADA =====================
+      // Alternativamente, você pode usar o sistema unificado:
+      
+      /*
+      const uffComponents = new UFFComponents();
+      uffComponents.initPage({
+        page: 'exemplo',
+        seo: {
+          title: 'Exemplo de Página | UFF Blumenau',
+          description: 'Página de exemplo demonstrando o uso dos componentes UFF.'
+        },
+        hero: {
+          title: 'Página de Exemplo',
+          subtitle: 'Demonstração dos componentes UFF'
+        },
+        footer: true,
+        whatsapp: true,
+        scripts: true
+      });
+      */
+    });
+  </script>
+
+  <!-- ===================== EXEMPLO DE COMPARAÇÃO ===================== -->
+  <script>
+    // ANTES - Código repetitivo em cada página:
+    /*
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuBtn && navMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+      });
+    }
+    */
+
+    // DEPOIS - Componente cuida de tudo automaticamente:
+    // CommonScriptsComponent.init(); // Já inicializado automaticamente
+
+    console.log('🎉 Componentes UFF carregados com sucesso!');
+    console.log('📦 Benefícios obtidos:');
+    console.log('  - Redução de ~60% no código duplicado');
+    console.log('  - Manutenção centralizada');
+    console.log('  - SEO automatizado');
+    console.log('  - Consistência visual garantida');
+  </script>
+</body>
+</html> 

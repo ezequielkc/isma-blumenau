@@ -8,21 +8,21 @@
   <meta name="description" content="Leia os Termos de Uso da UFF Blumenau. Entenda as regras para utilização do nosso site e serviços.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="UFF Blumenau">
-  <link rel="canonical" href="https://uffblumenau.com.br/termos-uso">
+  <link rel="canonical" href="https://defesapessoalblumenau.com.br/termos-uso">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Termos de Uso | UFF Blumenau">
   <meta property="og:description" content="Leia os Termos de Uso da UFF Blumenau. Entenda as regras para utilização do nosso site e serviços.">
-  <meta property="og:url" content="https://uffblumenau.com.br/termos-uso">
+  <meta property="og:url" content="https://defesapessoalblumenau.com.br/termos-uso">
   <meta property="og:site_name" content="UFF Blumenau">
-  <meta property="og:image" content="https://uffblumenau.com.br/assets/logo-uff.jpg">
+  <meta property="og:image" content="https://defesapessoalblumenau.com.br/assets/logo-uff.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Termos de Uso | UFF Blumenau">
   <meta name="twitter:description" content="Leia os Termos de Uso da UFF Blumenau. Entenda as regras para utilização do nosso site e serviços.">
-  <meta name="twitter:image" content="https://uffblumenau.com.br/assets/logo-uff.jpg">
+  <meta name="twitter:image" content="https://defesapessoalblumenau.com.br/assets/logo-uff.jpg">
   <!-- Fim SEO técnico -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
@@ -161,68 +161,31 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h4>Links Legais</h4>
-          <nav class="footer-menu">
-            <ul>
-              <li><a href="/politica-privacidade">Política de Privacidade</a></li>
-              <li><a href="/termos-uso">Termos de Uso</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer-column">
-          <h4>Redes Sociais</h4>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/sifu_angel_samaniego/" target="_blank" rel="noopener" title="Instagram Sifu Angel Samaniego">
-              <i class="fab fa-instagram"></i> Sifu Angel
-            </a>
-            <a href="https://www.instagram.com/uffbnu/" target="_blank" rel="noopener" title="Instagram Academia">
-              <i class="fab fa-instagram"></i> Academia
-            </a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h4>Cursos</h4>
-          <div class="footer-social">
-            <a href="https://seguranca.defesapessoalblumenau.com.br/" target="_blank" rel="noopener" title="Defesa Pessoal para Seguranças">
-              <i class="fas fa-shield-alt"></i> Defesa Pessoal para Seguranças
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <small>© 2025 UFF - Underground Fight and Fitness - Academia de Artes Marciais Blumenau. Todos os direitos reservados.</small>
-        <span class="credito-dourado" style="font-size: 0.85em; font-weight: normal;">Desenvolvido por <a href="https://portfolio.ezequielkowalski.com.br/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Ezequiel Kowalski</a></span>
-      </div>
-    </div>
-  </footer>
-  <script>
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    if (mobileMenuBtn && navMenu) {
-      mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-      });
-    }
-  </script>
-  <a href="https://wa.me/554799977632?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- Footer e WhatsApp serão inseridos automaticamente via componentes -->
 
-  <!-- Header JavaScript -->
-  <script src="js/header.js"></script>
+  <!-- ===================== COMPONENTES JAVASCRIPT ===================== -->
+  <script src="/components/footer.js"></script>
+  <script src="/components/whatsapp-button.js"></script>
+  <script src="/components/common-scripts.js"></script>
+  <script src="/js/header.js"></script>
+
+  <script>
+    // Desabilitar auto-inicialização do footer
+    window.DISABLE_FOOTER_AUTO_INIT = true;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar Footer
+      const footer = new FooterComponent();
+      footer.render();
+
+      // Inicializar WhatsApp Button Flutuante
+      const whatsappButton = WhatsAppButtonComponent.createFloatingButton({
+        message: 'Li os termos de uso e gostaria de mais informações!'
+      });
+      document.body.insertAdjacentHTML('beforeend', whatsappButton);
+
+      // Scripts comuns já são inicializados automaticamente
+    });
+  </script>
 </body>
 </html> 
