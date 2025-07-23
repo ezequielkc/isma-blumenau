@@ -28,12 +28,22 @@
       box-shadow: var(--shadow-lg);
       max-width: 1200px;
       width: 100%;
+      margin: 0 1rem;
     }
+    
+    .graduation-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+    }
+    
     .graduation-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 2rem;
-      box-shadow: var(--shadow-sm);
+      min-width: 700px;
+      box-shadow: none;
       border-radius: var(--border-radius);
       overflow: hidden;
     }
@@ -44,6 +54,7 @@
       text-align: left;
       font-weight: 600;
       border: 1px solid #000;
+      white-space: nowrap;
     }
     .graduation-table td {
       border: 1px solid #000;
@@ -63,6 +74,7 @@
       display: inline-block;
       margin-right: 0.5rem;
       vertical-align: middle;
+      flex-shrink: 0;
     }
     .grad-technical { 
       background-color: #3b82f6; 
@@ -83,6 +95,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-height: 44px;
     }
     .logout-btn:hover {
       background: var(--primary);
@@ -93,6 +106,8 @@
       align-items: center;
       margin-bottom: 1rem;
       color: var(--text);
+      flex-wrap: wrap;
+      gap: 1rem;
     }
     .page-title {
       color: #b22222;
@@ -100,6 +115,29 @@
       margin-bottom: 1rem;
       font-size: 2rem;
     }
+    
+    .back-link {
+      background: #6b7280;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease;
+      min-height: 44px;
+      justify-content: center;
+    }
+    
+    .back-link:hover {
+      background: #374151;
+      color: white;
+      text-decoration: none;
+    }
+    
     /* Aviso de Desenvolvimento */
     .development-notice {
       background: linear-gradient(135deg, #e3f2fd, #bbdefb);
@@ -133,13 +171,30 @@
       font-size: 0.95rem;
     }
 
-
+    @media (max-width: 1024px) {
+      .graduation-table-container {
+        padding: 2rem 1rem;
+        margin: 0 0.5rem;
+      }
+    }
 
     @media (max-width: 768px) {
+      .protected-content {
+        min-height: auto;
+        padding: 5rem 0 2rem 0;
+        align-items: flex-start;
+      }
+      
+      .graduation-table-container {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+      }
+      
       .development-notice {
         flex-direction: column;
         text-align: center;
         padding: 1rem;
+        margin-bottom: 1.5rem;
       }
       
       .notice-icon {
@@ -147,12 +202,101 @@
         margin-top: 0;
       }
       
-      .graduation-table {
-        font-size: 0.9rem;
+      .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
       }
+      
+      .user-info {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.5rem;
+      }
+      
+      .user-info > i {
+        font-size: 1.2rem;
+      }
+      
+      .graduation-table-wrapper {
+        margin-top: 1rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #ddd;
+      }
+      
+      .graduation-table {
+        font-size: 0.8rem;
+        min-width: 600px;
+      }
+      
       .graduation-table th,
       .graduation-table td {
-        padding: 0.5rem;
+        padding: 0.5rem 0.3rem;
+        font-size: 0.8rem;
+      }
+      
+      .graduation-table td:first-child {
+        min-width: 160px;
+      }
+      
+      .circle {
+        width: 18px;
+        height: 18px;
+        margin-right: 0.3rem;
+      }
+      
+      .back-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .protected-content {
+        padding: 4.5rem 0 1rem 0;
+      }
+      
+      .graduation-table-container {
+        padding: 1rem 0.5rem;
+        margin: 0 0.25rem;
+      }
+      
+      .page-title {
+        font-size: 1.3rem;
+      }
+      
+      .development-notice {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+      
+      .graduation-table {
+        font-size: 0.75rem;
+        min-width: 550px;
+      }
+      
+      .graduation-table th,
+      .graduation-table td {
+        padding: 0.4rem 0.2rem;
+        font-size: 0.75rem;
+      }
+      
+      .circle {
+        width: 16px;
+        height: 16px;
+      }
+      
+      .back-link {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+      }
+      
+      .logout-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -289,63 +433,65 @@
         <h1 class="page-title">I.S.M.A. Wyng Tjun</h1>
         <h2 style="text-align: center; color: var(--text); margin-bottom: 2rem; font-size: 1.5rem;">Caminho para o mestre de Wyng Tjun</h2>
 
-        <table class="graduation-table">
-          <thead>
-            <tr>
-              <th>Graduação</th>
-              <th>Grau</th>
-              <th>Formas</th>
-              <th>Treinamento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="circle grad-technical"></span> Technical Grade (1)</td>
-              <td>Technical Grade</td>
-              <td>Siu Nim Tau, Chum Kiu</td>
-              <td>Sequências 2 a 4 do Chi Sao, Aplicações de Chi Sao</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-technical"></span> Technical Grade (2)</td>
-              <td>Technical Grade</td>
-              <td>Biu Tze</td>
-              <td>Sequências 5 a 7 do Chi Sao, Aplicações de Chi Sao</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-technical"></span> Technical Grade (3)</td>
-              <td>Technical Grade</td>
-              <td>Mok Yan Chong 3/8</td>
-              <td>Sequências 1 a 4 do Chi Sao do Biu Tze, Aplicações de Chi Sao</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-technical"></span> Technical Grade (4)</td>
-              <td>Technical Grade</td>
-              <td>Mok Yan Chong 6/8</td>
-              <td>Sequências 1 a 6 do Chi Sao do Mok Yan Chong, Aplicações de Chi Sao</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-master"></span> Master Grade (5)</td>
-              <td>Master Grade</td>
-              <td>Mok Yan Chong 8/8 Tripodal</td>
-              <td>Sequências 7 a 8 do Chi Sao do Mok Yan Chong, Aplicações de Chi Sao e Chi Gerk</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-master"></span> Master Grade (6)</td>
-              <td>Master Grade</td>
-              <td>Look Dim Boon Kwun</td>
-              <td>Sequências 1 a 6 do Chi Kwan, Aplicações</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-master"></span> Master Grade (7)</td>
-              <td>Master Grade</td>
-              <td>Bart Cham Dao</td>
-              <td>Aplicações</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="graduation-table-wrapper">
+          <table class="graduation-table">
+            <thead>
+              <tr>
+                <th>Graduação</th>
+                <th>Grau</th>
+                <th>Formas</th>
+                <th>Treinamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="circle grad-technical"></span> Technical Grade (1)</td>
+                <td>Technical Grade</td>
+                <td>Siu Nim Tau, Chum Kiu</td>
+                <td>Sequências 2 a 4 do Chi Sao, Aplicações de Chi Sao</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-technical"></span> Technical Grade (2)</td>
+                <td>Technical Grade</td>
+                <td>Biu Tze</td>
+                <td>Sequências 5 a 7 do Chi Sao, Aplicações de Chi Sao</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-technical"></span> Technical Grade (3)</td>
+                <td>Technical Grade</td>
+                <td>Mok Yan Chong 3/8</td>
+                <td>Sequências 1 a 4 do Chi Sao do Biu Tze, Aplicações de Chi Sao</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-technical"></span> Technical Grade (4)</td>
+                <td>Technical Grade</td>
+                <td>Mok Yan Chong 6/8</td>
+                <td>Sequências 1 a 6 do Chi Sao do Mok Yan Chong, Aplicações de Chi Sao</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-master"></span> Master Grade (5)</td>
+                <td>Master Grade</td>
+                <td>Mok Yan Chong 8/8 Tripodal</td>
+                <td>Sequências 7 a 8 do Chi Sao do Mok Yan Chong, Aplicações de Chi Sao e Chi Gerk</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-master"></span> Master Grade (6)</td>
+                <td>Master Grade</td>
+                <td>Look Dim Boon Kwun</td>
+                <td>Sequências 1 a 6 do Chi Kwan, Aplicações</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-master"></span> Master Grade (7)</td>
+                <td>Master Grade</td>
+                <td>Bart Cham Dao</td>
+                <td>Aplicações</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         
         <div style="margin-top: 2rem; text-align: center;">
-          <a href="/area-estudantes/dashboard" style="background: #6b7280; color: white; padding: 1rem 2rem; border-radius: 4px; font-size: 1rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.2s ease;">
+          <a href="/area-estudantes/dashboard" class="back-link">
             <i class="fas fa-arrow-left"></i> Voltar ao Dashboard
           </a>
         </div>

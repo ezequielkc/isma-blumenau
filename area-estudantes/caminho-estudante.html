@@ -16,11 +16,24 @@
       padding: 6rem 0 2rem 0;
       background: var(--white);
     }
+    
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .graduation-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+    }
+    
     .graduation-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 2rem;
-      box-shadow: var(--shadow-sm);
+      min-width: 600px;
+      box-shadow: none;
       border-radius: var(--border-radius);
       overflow: hidden;
     }
@@ -31,6 +44,7 @@
       text-align: left;
       font-weight: 600;
       border: 1px solid #000;
+      white-space: nowrap;
     }
     .graduation-table td {
       border: 1px solid #000;
@@ -50,6 +64,7 @@
       display: inline-block;
       margin-right: 0.5rem;
       vertical-align: middle;
+      flex-shrink: 0;
     }
     .grad-1 { 
       background-color: #ffffff; 
@@ -85,6 +100,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-height: 44px;
     }
     .logout-btn:hover {
       background: var(--primary);
@@ -95,6 +111,8 @@
       align-items: center;
       margin-bottom: 1rem;
       color: var(--text);
+      flex-wrap: wrap;
+      gap: 1rem;
     }
     .page-title {
       color: #b22222;
@@ -102,6 +120,29 @@
       margin-bottom: 1rem;
       font-size: 2rem;
     }
+    
+    .back-link {
+      background: #6b7280;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease;
+      min-height: 44px;
+      justify-content: center;
+    }
+    
+    .back-link:hover {
+      background: #374151;
+      color: white;
+      text-decoration: none;
+    }
+    
     /* Aviso de Desenvolvimento */
     .development-notice {
       background: linear-gradient(135deg, #e3f2fd, #bbdefb);
@@ -136,10 +177,19 @@
     }
       
     @media (max-width: 768px) {
+      .protected-content {
+        padding: 5rem 0 2rem 0;
+      }
+      
+      .container {
+        padding: 0 0.5rem;
+      }
+      
       .development-notice {
         flex-direction: column;
         text-align: center;
         padding: 1rem;
+        margin-bottom: 1.5rem;
       }
       
       .notice-icon {
@@ -147,12 +197,100 @@
         margin-top: 0;
       }
       
-      .graduation-table {
-        font-size: 0.9rem;
+      .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
       }
+      
+      .user-info {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.5rem;
+      }
+      
+      .user-info > i {
+        font-size: 1.2rem;
+      }
+      
+      .graduation-table-wrapper {
+        margin-top: 1rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #ddd;
+      }
+      
+      .graduation-table {
+        font-size: 0.8rem;
+        min-width: 500px;
+      }
+      
       .graduation-table th,
       .graduation-table td {
-        padding: 0.5rem;
+        padding: 0.5rem 0.3rem;
+        font-size: 0.8rem;
+      }
+      
+      .graduation-table td:first-child {
+        min-width: 140px;
+      }
+      
+      .circle {
+        width: 18px;
+        height: 18px;
+        margin-right: 0.3rem;
+      }
+      
+      .back-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .protected-content {
+        padding: 4.5rem 0 1rem 0;
+      }
+      
+      .container {
+        padding: 0 0.25rem;
+      }
+      
+      .page-title {
+        font-size: 1.3rem;
+      }
+      
+      .development-notice {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+      
+      .graduation-table {
+        font-size: 0.75rem;
+        min-width: 450px;
+      }
+      
+      .graduation-table th,
+      .graduation-table td {
+        padding: 0.4rem 0.2rem;
+        font-size: 0.75rem;
+      }
+      
+      .circle {
+        width: 16px;
+        height: 16px;
+      }
+      
+      .back-link {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+      }
+      
+      .logout-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -289,93 +427,95 @@
         <h1 class="page-title">I.S.M.A. Wyng Tjun</h1>
         <h2 style="text-align: center; color: var(--text); margin-bottom: 2rem; font-size: 1.5rem;">Caminho para o estudante de Wyng Tjun</h2>
 
-        <table class="graduation-table">
-          <thead>
-            <tr>
-              <th>Graduação</th>
-              <th>Formas</th>
-              <th>Treinamento</th>
-              <th>Aplicações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="circle grad-1"></span> Siu Nim Tau 1/2</td>
-              <td>–</td>
-              <td>–</td>
-              <td>Luta Ritual 1, Aplicações do SNT</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-1"></span> Siu Nim Tau 2/2 Completo</td>
-              <td>–</td>
-              <td>–</td>
-              <td>Luta Ritual 2, Aplicações do SNT</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-2"></span> Chum Kiu 1/2</td>
-              <td>–</td>
-              <td>Dan Chi com passos e esquivas</td>
-              <td>Aplicações do CK Atacante com braços abertos + chutes</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-2"></span> Chum Kiu 2/2 Completo</td>
-              <td>–</td>
-              <td>Poon Sao</td>
-              <td>Aplicações do CK, Defesa contra soco em gancho</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu 1/3</td>
-              <td>–</td>
-              <td>1ª sequência Chi Sao 1/3</td>
-              <td>Joelhadas e cotoveladas, Aplicações da 1ªs de Chi Sao 1-3</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>1ª sequência Chi Sao 2/3</td>
-              <td>Aplicações da 1ª sequência do Chi Sao 2/3</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>1ª sequência Chi Sao 3/3 Completo</td>
-              <td>Aplicações da 1ª sequência do Chi Sao 3/3</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-4"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>Chi Sao 1ª sequência</td>
-              <td>Chaves e imobilizações</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-4"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>Chi Sao 1ª sequência</td>
-              <td>Defesa contra faca e bastão</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-5"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>Chi Sao 1ª sequência</td>
-              <td>Luta contra vários oponentes</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-5"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>Chi Sao 1ª sequência</td>
-              <td>Defesa contra arma de fogo</td>
-            </tr>
-            <tr>
-              <td><span class="circle grad-6"></span> Siu Nim Tau / Chum Kiu</td>
-              <td>–</td>
-              <td>Chi Sao 1ª sequência</td>
-              <td>Utilização do bastão de bolso (Palm Stick)</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="graduation-table-wrapper">
+          <table class="graduation-table">
+            <thead>
+              <tr>
+                <th>Graduação</th>
+                <th>Formas</th>
+                <th>Treinamento</th>
+                <th>Aplicações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="circle grad-1"></span> Siu Nim Tau 1/2</td>
+                <td>–</td>
+                <td>–</td>
+                <td>Luta Ritual 1, Aplicações do SNT</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-1"></span> Siu Nim Tau 2/2 Completo</td>
+                <td>–</td>
+                <td>–</td>
+                <td>Luta Ritual 2, Aplicações do SNT</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-2"></span> Chum Kiu 1/2</td>
+                <td>–</td>
+                <td>Dan Chi com passos e esquivas</td>
+                <td>Aplicações do CK Atacante com braços abertos + chutes</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-2"></span> Chum Kiu 2/2 Completo</td>
+                <td>–</td>
+                <td>Poon Sao</td>
+                <td>Aplicações do CK, Defesa contra soco em gancho</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu 1/3</td>
+                <td>–</td>
+                <td>1ª sequência Chi Sao 1/3</td>
+                <td>Joelhadas e cotoveladas, Aplicações da 1ªs de Chi Sao 1-3</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>1ª sequência Chi Sao 2/3</td>
+                <td>Aplicações da 1ª sequência do Chi Sao 2/3</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-3"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>1ª sequência Chi Sao 3/3 Completo</td>
+                <td>Aplicações da 1ª sequência do Chi Sao 3/3</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-4"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>Chi Sao 1ª sequência</td>
+                <td>Chaves e imobilizações</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-4"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>Chi Sao 1ª sequência</td>
+                <td>Defesa contra faca e bastão</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-5"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>Chi Sao 1ª sequência</td>
+                <td>Luta contra vários oponentes</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-5"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>Chi Sao 1ª sequência</td>
+                <td>Defesa contra arma de fogo</td>
+              </tr>
+              <tr>
+                <td><span class="circle grad-6"></span> Siu Nim Tau / Chum Kiu</td>
+                <td>–</td>
+                <td>Chi Sao 1ª sequência</td>
+                <td>Utilização do bastão de bolso (Palm Stick)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         
         <div style="margin-top: 2rem; text-align: center;">
-          <a href="/area-estudantes/dashboard" style="background: #6b7280; color: white; padding: 1rem 2rem; border-radius: 4px; font-size: 1rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.2s ease;">
+          <a href="/area-estudantes/dashboard" class="back-link">
             <i class="fas fa-arrow-left"></i> Voltar ao Dashboard
           </a>
         </div>
