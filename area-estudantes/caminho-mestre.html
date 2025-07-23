@@ -15,6 +15,7 @@
   <style>
     .protected-content {
       min-height: 80vh;
+      padding-top: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,14 +79,18 @@
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
-      margin-left: 1rem;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .logout-btn:hover {
       background: var(--primary);
     }
     .user-info {
-      text-align: right;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 1rem;
       color: var(--text);
     }
