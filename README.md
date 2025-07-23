@@ -177,14 +177,8 @@ Para questões relacionadas ao desenvolvimento e manutenção do sistema:
 - Instagram: @sifu_angel_samaniego
 - Academia: @uffbnu
 
-**Especificações Técnicas**
-- Linguagens: HTML5, CSS3, JavaScript ES6+
-- Frameworks: Vanilla JS (sem dependências externas)
-- Hospedagem: Vercel (CDN global)
-- Domínio: Configuração pendente
-
 ---
 
-Documentação técnica atualizada em: 2024
+Documentação técnica atualizada em: 23/07/2025
 Versão do sistema: 1.0.0
 Compatibilidade: Navegadores modernos (Chrome 60+, Firefox 60+, Safari 12+, Edge 79+)
