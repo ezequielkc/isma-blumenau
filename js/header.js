@@ -102,15 +102,18 @@ class HeaderComponent {
   openMobileMenu() {
     this.mobileMenu?.classList.add('active');
     this.overlay?.classList.add('active');
+    this.mobileBtn?.classList.add('active');
     this.body.classList.add('menu-open');
     
     // Acessibilidade
     this.mobileBtn?.setAttribute('aria-expanded', 'true');
     this.mobileMenu?.setAttribute('aria-hidden', 'false');
     
-    // Foco no primeiro link
-    const firstLink = this.mobileMenu?.querySelector('.header__nav-mobile-link');
-    firstLink?.focus();
+    // Foco no primeiro link com delay para animação
+    setTimeout(() => {
+      const firstLink = this.mobileMenu?.querySelector('.header__nav-mobile-link');
+      firstLink?.focus();
+    }, 200);
     
     // Previne scroll do body
     this.body.style.overflow = 'hidden';
@@ -122,6 +125,7 @@ class HeaderComponent {
   closeMobileMenu() {
     this.mobileMenu?.classList.remove('active');
     this.overlay?.classList.remove('active');
+    this.mobileBtn?.classList.remove('active');
     this.body.classList.remove('menu-open');
     
     // Acessibilidade
@@ -291,7 +295,9 @@ class HeaderTemplate {
         aria-label="Abrir menu de navegação"
         aria-expanded="false"
       >
-        <i class="fas fa-bars header__mobile-btn-icon"></i>
+        <div class="header__mobile-btn-icon">
+          <div class="header__mobile-btn-middle"></div>
+        </div>
       </button>
     `;
   }
