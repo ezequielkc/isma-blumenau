@@ -478,7 +478,7 @@
           
           // Redirecionar após 1.5 segundos
           setTimeout(() => {
-            window.location.href = '/area-estudantes/caminho-estudante';
+            window.location.href = '/area-estudantes/dashboard';
           }, 1500);
         } else {
           // Mostrar erro
@@ -502,10 +502,10 @@
       const authTime = parseInt(sessionStorage.getItem('uffAuthTime'));
       const currentTime = Date.now();
       
-      // Sessão válida por 8 horas
-      if (currentTime - authTime < 8 * 60 * 60 * 1000) {
-        window.location.href = '/area-estudantes/caminho-estudante';
-      } else {
+          // Sessão válida por 8 horas
+    if (currentTime - authTime < 8 * 60 * 60 * 1000) {
+      window.location.href = '/area-estudantes/dashboard';
+    } else {
         sessionStorage.removeItem('uffAuth');
         sessionStorage.removeItem('uffAuthTime');
       }

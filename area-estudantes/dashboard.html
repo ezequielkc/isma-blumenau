@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Área do Aluno | UFF Blumenau</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Dashboard da área do aluno - I.S.M.A. Wyng Tjun">
+  
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e293b 0%, #374151 50%, #111827 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: var(--fonte-principal);
+      color: #374151;
+    }
+
+    .dashboard-container {
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .welcome-section {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(178, 34, 34, 0.2);
+    }
+
+    .welcome-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .welcome-logos img {
+      height: 70px;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-title {
+      color: #1f2937;
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .welcome-subtitle {
+      color: #4b5563;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .wisdom-quote {
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      border-left: 4px solid #b22222;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #374151;
+      position: relative;
+    }
+
+    .wisdom-quote::before {
+      content: '"';
+      font-size: 3rem;
+      color: #b22222;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      line-height: 1;
+    }
+
+    .wisdom-text {
+      margin-left: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .wisdom-author {
+      text-align: right;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #6b7280;
+    }
+
+    .paths-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .path-card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(178, 34, 34, 0.2);
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .path-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .path-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #b22222, #8b0000);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .path-title {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .path-description {
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .path-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      text-align: left;
+    }
+
+    .path-features li {
+      color: #374151;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .path-features i {
+      color: #b22222;
+      font-size: 1rem;
+      width: 16px;
+    }
+
+    .path-button {
+      background: #b22222;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      width: 100%;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .path-button:hover {
+      background: #8b0000;
+      color: white;
+      text-decoration: none;
+    }
+
+    .path-button:active {
+      background: #7a0000;
+    }
+
+    .logout-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      z-index: 1001;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logout-btn:hover {
+      background: #c82333;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-container {
+        padding: 1rem;
+      }
+
+      .welcome-section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .welcome-logos {
+        gap: 1rem;
+      }
+
+      .welcome-logos img {
+        height: 50px;
+      }
+
+      .welcome-title {
+        font-size: 1.875rem;
+      }
+
+      .welcome-subtitle {
+        font-size: 1rem;
+      }
+
+      .paths-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .path-card {
+        padding: 1.5rem;
+      }
+
+      .path-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .wisdom-quote {
+        padding: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .wisdom-text {
+        margin-left: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .welcome-section {
+        padding: 1.5rem 1rem;
+      }
+
+      .path-card {
+        padding: 1.25rem;
+      }
+
+      .wisdom-quote::before {
+        font-size: 2rem;
+      }
+
+      .wisdom-text {
+        margin-left: 1rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
+  <header class="header" id="header-principal">
+    <div class="header__container">
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="Página inicial">
+        <img src="../assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="header__logo-img">
+        <img src="../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo" class="header__logo-img">
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="header__nav-desktop" role="navigation" aria-label="Menu principal">
+        <ul class="header__nav-desktop">
+          <li class="header__nav-item">
+            <a href="/" class="header__nav-link">
+              <i class="fas fa-home"></i>
+              Início
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/sobre" class="header__nav-link">
+              <i class="fas fa-info-circle"></i>
+              Sobre
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/modalidades" class="header__nav-link">
+              <i class="fas fa-fist-raised"></i>
+              Modalidades
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/horarios" class="header__nav-link">
+              <i class="fas fa-clock"></i>
+              Horários
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/contato" class="header__nav-link">
+              <i class="fas fa-envelope"></i>
+              Contato
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/area-estudantes" class="header__nav-link header__nav-link--area-aluno">
+              <i class="fas fa-graduation-cap"></i>
+              Área Aluno
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botão Mobile -->
+      <button class="header__mobile-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <i class="fas fa-bars header__mobile-btn-icon"></i>
+      </button>
+    </div>
+
+    <!-- Navegação Mobile -->
+    <nav class="header__nav-mobile" role="navigation" aria-label="Menu mobile">
+      <button class="header__mobile-close" aria-label="Fechar menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="header__nav-mobile-list">
+        <li class="header__nav-mobile-item">
+          <a href="/" class="header__nav-mobile-link">
+            <i class="fas fa-home"></i>
+            Início
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/sobre" class="header__nav-mobile-link">
+            <i class="fas fa-info-circle"></i>
+            Sobre
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/modalidades" class="header__nav-mobile-link">
+            <i class="fas fa-fist-raised"></i>
+            Modalidades
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/horarios" class="header__nav-mobile-link">
+            <i class="fas fa-clock"></i>
+            Horários
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/contato" class="header__nav-mobile-link">
+            <i class="fas fa-envelope"></i>
+            Contato
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/area-estudantes" class="header__nav-mobile-link header__nav-mobile-link--area-aluno">
+            <i class="fas fa-graduation-cap"></i>
+            Área Aluno
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Overlay Mobile -->
+    <div class="header__overlay"></div>
+  </header>
+
+  <main>
+    <div class="dashboard-container">
+      <button id="logoutBtn" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Sair
+      </button>
+
+      <div class="welcome-section">
+        <div class="welcome-logos">
+          <img src="../assets/logo-uff.jpg" alt="Logo UFF Blumenau">
+          <img src="../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo">
+        </div>
+        <h1 class="welcome-title">Bem-vindo à Área do Aluno</h1>
+        <p class="welcome-subtitle">Escolha seu caminho de desenvolvimento no I.S.M.A. Wyng Tjun</p>
+
+        <div class="wisdom-quote">
+          <div class="wisdom-text">
+            A jornada de mil milhas começa com um único passo. Cada nível de conhecimento é uma porta que se abre para a próxima. O verdadeiro mestre é aquele que nunca para de ser estudante.
+          </div>
+          <div class="wisdom-author">— Filosofia das Artes Marciais</div>
+        </div>
+      </div>
+
+      <div class="paths-container">
+        <div class="path-card">
+          <div class="path-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h2 class="path-title">Caminho do Estudante</h2>
+          <p class="path-description">
+            Para aqueles que estão iniciando ou desenvolvendo suas habilidades fundamentais no Wyng Tjun.
+          </p>
+          <ul class="path-features">
+            <li><i class="fas fa-check"></i> Orientações de graduação</li>
+            <li><i class="fas fa-check"></i> Objetivos por nível</li>
+            <li><i class="fas fa-check"></i> Fundamentos técnicos</li>
+            <li><i class="fas fa-check"></i> Desenvolvimento progressivo</li>
+          </ul>
+          <a href="/area-estudantes/caminho-estudante" class="path-button">
+            <i class="fas fa-arrow-right"></i> Acessar Caminho
+          </a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h2 class="path-title">Caminho para o Mestre</h2>
+          <p class="path-description">
+            Para estudantes avançados que buscam aprofundar seus conhecimentos e desenvolver liderança.
+          </p>
+          <ul class="path-features">
+            <li><i class="fas fa-check"></i> Técnicas avançadas</li>
+            <li><i class="fas fa-check"></i> Metodologia de ensino</li>
+            <li><i class="fas fa-check"></i> Filosofia marcial</li>
+            <li><i class="fas fa-check"></i> Desenvolvimento de liderança</li>
+          </ul>
+          <a href="/area-estudantes/caminho-mestre" class="path-button">
+            <i class="fas fa-arrow-right"></i> Acessar Caminho
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Verificar autenticação
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem('uffAuth');
+      const authTime = parseInt(sessionStorage.getItem('uffAuthTime'));
+      const currentTime = Date.now();
+      
+      if (isAuth !== 'true' || !authTime || currentTime - authTime > 8 * 60 * 60 * 1000) {
+        sessionStorage.removeItem('uffAuth');
+        sessionStorage.removeItem('uffAuthTime');
+        window.location.href = '/area-estudantes';
+        return false;
+      }
+      return true;
+    }
+    
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      sessionStorage.removeItem('uffAuth');
+      sessionStorage.removeItem('uffAuthTime');
+      window.location.href = '/area-estudantes';
+    });
+    
+    // Verificar autenticação ao carregar a página
+    if (!checkAuth()) {
+      // Já redirecionado na função checkAuth
+    }
+  </script>
+
+  <!-- Header JavaScript -->
+  <script src="../js/header.js"></script>
+</body>
+</html> 

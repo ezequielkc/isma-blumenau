@@ -9,6 +9,8 @@
     { "source": "/politica-privacidade", "destination": "/politica-privacidade.html" },
     { "source": "/termos-uso", "destination": "/termos-uso.html" },
     { "source": "/area-estudantes", "destination": "/area-estudantes/index.html" },
-    { "source": "/area-estudantes/caminho-estudante", "destination": "/area-estudantes/caminho-estudante.html" }
+    { "source": "/area-estudantes/dashboard", "destination": "/area-estudantes/dashboard.html" },
+    { "source": "/area-estudantes/caminho-estudante", "destination": "/area-estudantes/caminho-estudante.html" },
+    { "source": "/area-estudantes/caminho-mestre", "destination": "/area-estudantes/caminho-mestre.html" }
   ]
 } 
