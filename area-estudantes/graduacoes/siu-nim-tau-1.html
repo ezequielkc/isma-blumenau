@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siu Nim Tau 1/2 | Área de Estudantes | UFF Blumenau</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .protected-content {
+      padding: 2rem 0;
+      background: var(--white);
+    }
+    .graduation-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: var(--gradient-primary);
+      color: var(--white);
+      border-radius: var(--border-radius);
+    }
+    .graduation-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .grad-1 { 
+      background-color: #ffffff; 
+      border: 2px solid #000; 
+    }
+    .content-sections {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .content-card {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .content-card h3 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .content-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .content-card li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .content-card li:last-child {
+      border-bottom: none;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--light-gray);
+      border-radius: var(--border-radius);
+    }
+    .nav-btn {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+    .nav-btn.disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .user-info {
+      text-align: right;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .logout-btn {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      margin-left: 1rem;
+      transition: all 0.3s ease;
+    }
+    .logout-btn:hover {
+      background: var(--primary);
+    }
+    @media (max-width: 768px) {
+      .navigation {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .graduation-title {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
+  <header class="header" id="header-principal">
+    <nav class="nav container">
+      <div class="logo logo-dupla">
+        <img src="../../assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="logo-uff-header logo-uff">
+        <img src="../../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo" class="logo-isma">
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Início</a></li>
+        <li><a href="/sobre" class="nav-link">Sobre</a></li>
+        <li><a href="/modalidades" class="nav-link">Modalidades</a></li>
+        <li><a href="/horarios" class="nav-link">Horários</a></li>
+        <li><a href="/contato" class="nav-link">Contato</a></li>
+        <li class="whatsapp-desktop"><a href="https://wa.me/554799977632?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Fale no WhatsApp</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="protected-content">
+      <div class="container">
+        <div class="user-info">
+          <i class="fas fa-user-graduate"></i> Área de Estudantes
+          <button id="logoutBtn" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Sair
+          </button>
+        </div>
+        
+        <div class="graduation-header">
+          <div class="graduation-title">
+            <span class="circle grad-1"></span>
+            <h1>Siu Nim Tau 1/2</h1>
+          </div>
+          <p>Primeira graduação - Fundamentos básicos do Wyng Tjun</p>
+        </div>
+
+        <div class="content-sections">
+          <div class="content-card">
+            <h3><i class="fas fa-target"></i> Objetivos desta Graduação</h3>
+            <ul>
+              <li><strong>Postura fundamental:</strong> Aprender a posição básica do Wyng Tjun</li>
+              <li><strong>Movimentos básicos:</strong> Dominar os primeiros movimentos da forma</li>
+              <li><strong>Concentração:</strong> Desenvolver foco e disciplina mental</li>
+              <li><strong>Respiração:</strong> Coordenar movimentos com respiração correta</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h3><i class="fas fa-dumbbell"></i> Treinamentos</h3>
+            <ul>
+              <li><strong>Luta Ritual 1:</strong> Sequência básica de movimentos defensivos</li>
+              <li><strong>Aplicações do SNT:</strong> Primeiras aplicações práticas dos movimentos</li>
+              <li><strong>Condicionamento:</strong> Exercícios para fortalecer braços e punhos</li>
+              <li><strong>Flexibilidade:</strong> Alongamentos específicos para artes marciais</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h3><i class="fas fa-video"></i> Materiais de Estudo</h3>
+            <ul>
+              <li><strong>Vídeo 1:</strong> Demonstração da forma Siu Nim Tau (parte 1)</li>
+              <li><strong>Vídeo 2:</strong> Explicação detalhada dos movimentos</li>
+              <li><strong>Vídeo 3:</strong> Aplicações práticas básicas</li>
+              <li><strong>PDF:</strong> Manual teórico da graduação</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h3><i class="fas fa-lightbulb"></i> Dicas Importantes</h3>
+            <ul>
+              <li><strong>Pratique diariamente:</strong> Dedique pelo menos 15 minutos por dia</li>
+              <li><strong>Foque na qualidade:</strong> Movimentos lentos e precisos são melhores que rápidos e imprecisos</li>
+              <li><strong>Respiração:</strong> Mantenha a respiração natural e relaxada</li>
+              <li><strong>Paciência:</strong> O desenvolvimento leva tempo - seja consistente</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <a href="/area-estudantes/caminho-estudante" class="nav-btn">
+            <i class="fas fa-arrow-left"></i> Voltar ao Caminho
+          </a>
+          <span style="color: var(--text); font-weight: 600;">Graduação 1 de 12</span>
+          <a href="siu-nim-tau-2.html" class="nav-btn">
+            Próxima Graduação <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Verificar autenticação
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem('uffAuth');
+      const authTime = parseInt(sessionStorage.getItem('uffAuthTime'));
+      const currentTime = Date.now();
+      
+      if (isAuth !== 'true' || !authTime || currentTime - authTime > 8 * 60 * 60 * 1000) {
+        sessionStorage.removeItem('uffAuth');
+        sessionStorage.removeItem('uffAuthTime');
+        window.location.href = '/area-estudantes';
+        return false;
+      }
+      return true;
+    }
+    
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      sessionStorage.removeItem('uffAuth');
+      sessionStorage.removeItem('uffAuthTime');
+      window.location.href = '/area-estudantes';
+    });
+    
+    // Verificar autenticação ao carregar a página
+    if (!checkAuth()) {
+      // Já redirecionado na função checkAuth
+    }
+  </script>
+</body>
+</html> 

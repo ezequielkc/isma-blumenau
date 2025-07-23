@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Bloquear área de estudantes
+Disallow: /area-estudantes/
+
 Sitemap: https://defesapessoalblumenau.com.br/sitemap.xml 

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caminho para o Estudante de Wyng Tjun | UFF Blumenau</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .protected-content {
+      padding: 2rem 0;
+      background: var(--white);
+    }
+    .graduation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    .graduation-table th {
+      background-color: #f4b000;
+      color: var(--primary);
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #000;
+    }
+    .graduation-table td {
+      border: 1px solid #000;
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .graduation-table tr:hover {
+      background-color: rgba(244, 176, 0, 0.1);
+      cursor: pointer;
+    }
+    .circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    .grad-1 { 
+      background-color: #ffffff; 
+      border: 2px solid #000; 
+    }
+    .grad-2 { 
+      background-color: #add8e6; 
+    }
+    .grad-3 { 
+      background-color: #228b22; 
+    }
+    .grad-4 { 
+      background-color: #ffff00; 
+    }
+    .grad-5 { 
+      background-color: #ffa500; 
+    }
+    .grad-6 { 
+      background-color: #ff0000; 
+    }
+    .grad-7 { 
+      background-color: #8b0000; 
+      border: 1px solid #fff; 
+    }
+    .logout-btn {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      margin-left: 1rem;
+      transition: all 0.3s ease;
+    }
+    .logout-btn:hover {
+      background: var(--primary);
+    }
+    .user-info {
+      text-align: right;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .page-title {
+      color: #b22222;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    @media (max-width: 768px) {
+      .graduation-table {
+        font-size: 0.9rem;
+      }
+      .graduation-table th,
+      .graduation-table td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
+  <header class="header" id="header-principal">
+    <nav class="nav container">
+      <div class="logo logo-dupla">
+        <img src="../assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="logo-uff-header logo-uff">
+        <img src="../assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo" class="logo-isma">
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Início</a></li>
+        <li><a href="/sobre" class="nav-link">Sobre</a></li>
+        <li><a href="/modalidades" class="nav-link">Modalidades</a></li>
+        <li><a href="/horarios" class="nav-link">Horários</a></li>
+        <li><a href="/contato" class="nav-link">Contato</a></li>
+        <li class="whatsapp-desktop"><a href="https://wa.me/554799977632?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Fale no WhatsApp</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="protected-content">
+      <div class="container">
+        <div class="user-info">
+          <i class="fas fa-user-graduate"></i> Área de Estudantes
+          <button id="logoutBtn" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Sair
+          </button>
+        </div>
+        
+        <h1 class="page-title">Caminho para o estudante de Wyng Tjun</h1>
+
+        <table class="graduation-table">
+          <thead>
+            <tr>
+              <th>Graduação</th>
+              <th>Formas</th>
+              <th>Treinamento</th>
+              <th>Aplicações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="navigateToGraduation('siu-nim-tau-1')">
+              <td><span class="circle grad-1"></span> Siu Nim Tau 1/2</td>
+              <td>-</td>
+              <td>Luta Ritual 1<br>Aplicações do SNT</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('siu-nim-tau-2')">
+              <td><span class="circle grad-1"></span> Siu Nim Tau 2/2 Completo</td>
+              <td>-</td>
+              <td>Luta Ritual 2<br>Aplicações do SNT</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('chum-kiu-1')">
+              <td><span class="circle grad-2"></span> Chum Kiu 1/2</td>
+              <td>Dan Chi com passos e esquivas</td>
+              <td>Aplicações do CK Atacante com braços abertos + chutes</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('chum-kiu-2')">
+              <td><span class="circle grad-2"></span> Chum Kiu 2/2 Completo</td>
+              <td>Poon Sao</td>
+              <td>Aplicações do CK<br>Defesa contra soco em gancho</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('biu-jee-1')">
+              <td><span class="circle grad-3"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee 1/3</td>
+              <td>1ª sequência Chi Sao</td>
+              <td>Joelhadas e cotoveladas<br>Aplicações da 1ªs de Chi Sao 1-3</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('biu-jee-2')">
+              <td><span class="circle grad-3"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>1ª sequência Chi Sao 2/3</td>
+              <td>Aplicações da 1ª sequência do Chi Sao 2/3</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('chi-sao-1')">
+              <td><span class="circle grad-4"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>1ª sequência Chi Sao 3/3 Completo</td>
+              <td>Aplicações da 1ª sequência do Chi Sao 3/3</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('chi-sao-2')">
+              <td><span class="circle grad-4"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>Chi Sao<br>1ª sequência</td>
+              <td>Chaves e imobilizações</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('defesa-armas-1')">
+              <td><span class="circle grad-5"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>Chi Sao<br>1ª sequência</td>
+              <td>Defesa contra faca e bastão</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('multiplos-oponentes')">
+              <td><span class="circle grad-5"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>Chi Sao<br>1ª sequência</td>
+              <td>Luta contra vários oponentes</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('defesa-arma-fogo')">
+              <td><span class="circle grad-6"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>Chi Sao<br>1ª sequência</td>
+              <td>Defesa contra arma de fogo</td>
+              <td>-</td>
+            </tr>
+            <tr onclick="navigateToGraduation('palm-stick')">
+              <td><span class="circle grad-7"></span> Siu Nim Tau<br>Chum Kiu<br>Biu Jee</td>
+              <td>Chi Sao<br>1ª sequência</td>
+              <td>Utilização do bastão de bolso (Palm Stick)</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Verificar autenticação
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem('uffAuth');
+      const authTime = parseInt(sessionStorage.getItem('uffAuthTime'));
+      const currentTime = Date.now();
+      
+      if (isAuth !== 'true' || !authTime || currentTime - authTime > 8 * 60 * 60 * 1000) {
+        sessionStorage.removeItem('uffAuth');
+        sessionStorage.removeItem('uffAuthTime');
+        window.location.href = '/area-estudantes';
+        return false;
+      }
+      return true;
+    }
+    
+    // Navegar para página de graduação
+    function navigateToGraduation(graduation) {
+      if (checkAuth()) {
+        window.location.href = `graduacoes/${graduation}`;
+      }
+    }
+    
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      sessionStorage.removeItem('uffAuth');
+      sessionStorage.removeItem('uffAuthTime');
+      window.location.href = '/area-estudantes';
+    });
+    
+    // Verificar autenticação ao carregar a página
+    if (!checkAuth()) {
+      // Já redirecionado na função checkAuth
+    }
+  </script>
+</body>
+</html> 
