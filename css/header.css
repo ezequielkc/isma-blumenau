@@ -1,0 +1,342 @@
+/* ===================== HEADER COMPONENT STYLES ===================== */
+
+/* CSS Variables para o Header */
+:root {
+  --header-height: 85px;
+  --header-bg: var(--white);
+  --header-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  --header-padding: 1rem 0;
+  --header-z-index: 1000;
+  
+  /* Navigation */
+  --nav-gap: 2rem;
+  --nav-link-padding: 0.5rem 1rem;
+  --nav-link-border-radius: 6px;
+  --nav-link-transition: all 0.3s ease;
+  
+  /* Logo */
+  --logo-height: 60px;
+  --logo-gap: 1rem;
+  
+  /* Mobile Menu */
+  --mobile-menu-width: 280px;
+  --mobile-menu-bg: var(--white);
+  --mobile-menu-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+  --mobile-btn-size: 40px;
+  --mobile-overlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+/* ===================== BASE HEADER STYLES ===================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--header-bg);
+  box-shadow: var(--header-shadow);
+  z-index: var(--header-z-index);
+  transition: var(--nav-link-transition);
+}
+
+/* Body offset para compensar o header fixo */
+body {
+  padding-top: var(--header-height) !important;
+}
+
+/* Ajuste para primeira seção após header fixo */
+.header + main > section:first-child,
+.header + main > .hero:first-child {
+  margin-top: 0;
+  position: relative;
+}
+
+/* Ajuste específico para hero sections com padding interno */
+.hero {
+  padding-top: calc(var(--header-height) * 0.3);
+}
+
+/* Utility classes para ajustes específicos */
+.header-offset-top {
+  margin-top: var(--header-height) !important;
+}
+
+.header-padding-top {
+  padding-top: var(--header-height) !important;
+}
+
+/* Classes para diferentes tipos de conteúdo */
+.full-height-section {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.content-with-header {
+  padding-top: calc(var(--header-height) + 2rem);
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--header-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* ===================== LOGO COMPONENT ===================== */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--logo-gap);
+  text-decoration: none;
+}
+
+.header__logo-img {
+  height: var(--logo-height);
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===================== DESKTOP NAVIGATION ===================== */
+.header__nav-desktop {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--nav-gap);
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--nav-link-padding);
+  border-radius: var(--nav-link-border-radius);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--nav-link-transition);
+  white-space: nowrap;
+}
+
+.header__nav-link:hover {
+  background: rgba(178, 34, 34, 0.1);
+  color: var(--primary);
+}
+
+/* Area Aluno Button Styling */
+.header__nav-link--area-aluno {
+  background: linear-gradient(135deg, #b22222, #8b0000);
+  color: var(--white);
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(178, 34, 34, 0.2);
+}
+
+.header__nav-link--area-aluno:hover {
+  background: linear-gradient(135deg, #8b0000, #660000);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(178, 34, 34, 0.3);
+  color: var(--white);
+}
+
+/* ===================== MOBILE MENU BUTTON ===================== */
+.header__mobile-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--mobile-btn-size);
+  height: var(--mobile-btn-size);
+  background: none;
+  border: none;
+  border-radius: var(--nav-link-border-radius);
+  cursor: pointer;
+  transition: var(--nav-link-transition);
+  color: var(--text);
+}
+
+.header__mobile-btn:hover {
+  background: rgba(178, 34, 34, 0.1);
+}
+
+.header__mobile-btn-icon {
+  font-size: 1.25rem;
+  transition: var(--nav-link-transition);
+}
+
+/* ===================== MOBILE NAVIGATION ===================== */
+.header__nav-mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: var(--mobile-menu-width);
+  height: 100vh;
+  background: var(--mobile-menu-bg);
+  box-shadow: var(--mobile-menu-shadow);
+  padding: 2rem 0;
+  transition: right 0.3s ease;
+  z-index: var(--header-z-index);
+  overflow-y: auto;
+}
+
+.header__nav-mobile.active {
+  right: 0;
+}
+
+.header__nav-mobile-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-mobile-item {
+  margin: 0;
+}
+
+.header__nav-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--nav-link-transition);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__nav-mobile-link:hover {
+  background: rgba(178, 34, 34, 0.1);
+  color: var(--primary);
+}
+
+.header__nav-mobile-link--area-aluno {
+  background: linear-gradient(135deg, #b22222, #8b0000);
+  color: var(--white);
+  font-weight: 600;
+  margin: 1rem;
+  border-radius: var(--nav-link-border-radius);
+  border-bottom: none;
+}
+
+.header__nav-mobile-link--area-aluno:hover {
+  background: linear-gradient(135deg, #8b0000, #660000);
+  color: var(--white);
+}
+
+/* Mobile Close Button */
+.header__mobile-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+  width: var(--mobile-btn-size);
+  height: var(--mobile-btn-size);
+  border-radius: var(--nav-link-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--nav-link-transition);
+}
+
+.header__mobile-close:hover {
+  background: rgba(178, 34, 34, 0.1);
+}
+
+/* ===================== MOBILE OVERLAY ===================== */
+.header__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--mobile-overlay-bg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: calc(var(--header-z-index) - 1);
+}
+
+.header__overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===================== RESPONSIVE BREAKPOINTS ===================== */
+@media (max-width: 768px) {
+  .header__nav-desktop {
+    display: none;
+  }
+  
+  .header__mobile-btn {
+    display: flex;
+  }
+  
+  .header__container {
+    padding: 0.75rem 1rem;
+  }
+  
+  :root {
+    --header-height: 75px;
+    --logo-height: 50px;
+    --nav-gap: 1rem;
+  }
+  
+  body {
+    padding-top: 75px !important;
+  }
+  
+  .hero {
+    padding-top: calc(75px * 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 65px;
+    --mobile-menu-width: 100vw;
+    --logo-height: 42px;
+  }
+  
+  .header__container {
+    padding: 0.5rem 1rem;
+  }
+  
+  body {
+    padding-top: 65px !important;
+  }
+  
+  .hero {
+    padding-top: calc(65px * 0.3);
+  }
+}
+
+/* ===================== ACCESSIBILITY ===================== */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header__nav-link,
+  .header__mobile-btn,
+  .header__nav-mobile,
+  .header__overlay {
+    transition: none;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.header__nav-link:focus,
+.header__mobile-btn:focus,
+.header__nav-mobile-link:focus,
+.header__mobile-close:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+} 

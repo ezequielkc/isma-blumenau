@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo - Componente Header</title>
+  
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- ===================== HEADER COMPONENT ===================== -->
+  <header class="header" id="header-principal">
+    <div class="header__container">
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="Página inicial">
+        <img 
+          src="/assets/logo-uff.jpg" 
+          alt="Logo UFF Blumenau" 
+          class="header__logo-img"
+        >
+        <img 
+          src="/assets/logo-isma-site.png" 
+          alt="ISMA Wyng Tjun Logo" 
+          class="header__logo-img"
+        >
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="header__nav-desktop" role="navigation" aria-label="Menu principal">
+        <ul class="header__nav-desktop">
+          <li class="header__nav-item">
+            <a href="/" class="header__nav-link">
+              <i class="fas fa-home"></i>
+              Início
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/sobre" class="header__nav-link">
+              <i class="fas fa-info-circle"></i>
+              Sobre
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/modalidades" class="header__nav-link">
+              <i class="fas fa-fist-raised"></i>
+              Modalidades
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/horarios" class="header__nav-link">
+              <i class="fas fa-clock"></i>
+              Horários
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/contato" class="header__nav-link">
+              <i class="fas fa-envelope"></i>
+              Contato
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/area-estudantes" class="header__nav-link header__nav-link--area-aluno">
+              <i class="fas fa-graduation-cap"></i>
+              Área Aluno
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botão Mobile -->
+      <button 
+        class="header__mobile-btn" 
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bars header__mobile-btn-icon"></i>
+      </button>
+    </div>
+
+    <!-- Navegação Mobile -->
+    <nav class="header__nav-mobile" role="navigation" aria-label="Menu mobile">
+      <button class="header__mobile-close" aria-label="Fechar menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="header__nav-mobile-list">
+        <li class="header__nav-mobile-item">
+          <a href="/" class="header__nav-mobile-link">
+            <i class="fas fa-home"></i>
+            Início
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/sobre" class="header__nav-mobile-link">
+            <i class="fas fa-info-circle"></i>
+            Sobre
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/modalidades" class="header__nav-mobile-link">
+            <i class="fas fa-fist-raised"></i>
+            Modalidades
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/horarios" class="header__nav-mobile-link">
+            <i class="fas fa-clock"></i>
+            Horários
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/contato" class="header__nav-mobile-link">
+            <i class="fas fa-envelope"></i>
+            Contato
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/area-estudantes" class="header__nav-mobile-link header__nav-mobile-link--area-aluno">
+            <i class="fas fa-graduation-cap"></i>
+            Área Aluno
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Overlay Mobile -->
+    <div class="header__overlay"></div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main style="margin-top: 100px; padding: 2rem;">
+    <h1>Exemplo do Componente Header</h1>
+    <p>Este é um exemplo de como usar o componente de cabeçalho modular.</p>
+    
+    <h2>Como usar:</h2>
+    
+    <h3>1. Método Manual (HTML estático)</h3>
+    <p>Copie o código HTML do cabeçalho acima e cole em suas páginas.</p>
+    
+    <h3>2. Método Programático (JavaScript)</h3>
+    <pre><code>
+// Criar uma nova instância do template
+const headerTemplate = new HeaderTemplate({
+  logoPath: '/assets/',
+  logoUff: 'logo-uff.jpg',
+  logoIsma: 'logo-isma-site.png'
+});
+
+// Gerar o HTML
+const headerHTML = headerTemplate.generate();
+
+// Inserir no DOM
+document.body.insertAdjacentHTML('afterbegin', headerHTML);
+
+// Inicializar funcionalidade
+const headerComponent = new HeaderComponent();
+    </code></pre>
+
+    <h3>3. CSS e JavaScript necessários</h3>
+    <p>Inclua os arquivos:</p>
+    <ul>
+      <li><code>/css/header.css</code> - Estilos do componente</li>
+      <li><code>/js/header.js</code> - Funcionalidade JavaScript</li>
+      <li>Font Awesome para os ícones</li>
+    </ul>
+
+    <h2>Características do Componente:</h2>
+    <ul>
+      <li>✅ Totalmente responsivo</li>
+      <li>✅ Acessibilidade completa (ARIA, foco, teclado)</li>
+      <li>✅ Menu mobile com overlay</li>
+      <li>✅ CSS com variáveis customizáveis</li>
+      <li>✅ JavaScript modular e reutilizável</li>
+      <li>✅ Semântica HTML apropriada</li>
+      <li>✅ Performance otimizada</li>
+    </ul>
+  </main>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script src="/js/header.js"></script>
+</body>
+</html> 

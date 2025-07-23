@@ -25,28 +25,114 @@
   <meta name="twitter:image" content="https://uffblumenau.com.br/assets/logo-uff.jpg">
   <!-- Fim SEO técnico -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- ===================== CABEÇALHO FIXO COM NAVEGAÇÃO ===================== -->
   <header class="header" id="header-principal">
-    <nav class="nav container">
-      <div class="logo logo-dupla">
-        <img src="assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="logo-uff-header logo-uff">
-        <img src="assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo" class="logo-isma">
-      </div>
-      <ul class="nav-menu">
-        <li><a href="/" class="nav-link">Início</a></li>
-        <li><a href="/sobre" class="nav-link">Sobre</a></li>
-        <li><a href="/modalidades" class="nav-link">Modalidades</a></li>
-        <li><a href="/horarios" class="nav-link">Horários</a></li>
-        <li><a href="/contato" class="nav-link">Contato</a></li>
-        <li class="whatsapp-desktop"><a href="https://wa.me/554799977632?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Fale no WhatsApp</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu mobile">
-        <i class="fas fa-bars"></i>
+    <div class="header__container">
+      <!-- Logo -->
+      <a href="/" class="header__logo" aria-label="Página inicial">
+        <img src="assets/logo-uff.jpg" alt="Logo UFF Blumenau" class="header__logo-img">
+        <img src="assets/logo-isma-site.png" alt="ISMA Wyng Tjun Logo" class="header__logo-img">
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="header__nav-desktop" role="navigation" aria-label="Menu principal">
+        <ul class="header__nav-desktop">
+          <li class="header__nav-item">
+            <a href="/" class="header__nav-link">
+              <i class="fas fa-home"></i>
+              Início
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/sobre" class="header__nav-link">
+              <i class="fas fa-info-circle"></i>
+              Sobre
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/modalidades" class="header__nav-link">
+              <i class="fas fa-fist-raised"></i>
+              Modalidades
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/horarios" class="header__nav-link">
+              <i class="fas fa-clock"></i>
+              Horários
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/contato" class="header__nav-link">
+              <i class="fas fa-envelope"></i>
+              Contato
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/area-estudantes" class="header__nav-link header__nav-link--area-aluno">
+              <i class="fas fa-graduation-cap"></i>
+              Área Aluno
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botão Mobile -->
+      <button class="header__mobile-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <i class="fas fa-bars header__mobile-btn-icon"></i>
       </button>
+    </div>
+
+    <!-- Navegação Mobile -->
+    <nav class="header__nav-mobile" role="navigation" aria-label="Menu mobile">
+      <button class="header__mobile-close" aria-label="Fechar menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="header__nav-mobile-list">
+        <li class="header__nav-mobile-item">
+          <a href="/" class="header__nav-mobile-link">
+            <i class="fas fa-home"></i>
+            Início
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/sobre" class="header__nav-mobile-link">
+            <i class="fas fa-info-circle"></i>
+            Sobre
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/modalidades" class="header__nav-mobile-link">
+            <i class="fas fa-fist-raised"></i>
+            Modalidades
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/horarios" class="header__nav-mobile-link">
+            <i class="fas fa-clock"></i>
+            Horários
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/contato" class="header__nav-mobile-link">
+            <i class="fas fa-envelope"></i>
+            Contato
+          </a>
+        </li>
+        <li class="header__nav-mobile-item">
+          <a href="/area-estudantes" class="header__nav-mobile-link header__nav-mobile-link--area-aluno">
+            <i class="fas fa-graduation-cap"></i>
+            Área Aluno
+          </a>
+        </li>
+      </ul>
     </nav>
+
+    <!-- Overlay Mobile -->
+    <div class="header__overlay"></div>
   </header>
 
   <main>
@@ -276,5 +362,8 @@
       });
     }
   </script>
+
+  <!-- Header JavaScript -->
+  <script src="js/header.js"></script>
 </body>
 </html> 
