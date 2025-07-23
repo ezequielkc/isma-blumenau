@@ -265,7 +265,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-top: 1rem;
+  padding-top: 5rem;
 }
 
 .header__nav-mobile-item {
@@ -323,6 +323,32 @@ body {
   padding-left: 2.5rem;
 }
 
+/* Remove active page highlighting in mobile menu */
+.header__nav-mobile-link.active,
+.header__nav-mobile-link[aria-current="page"],
+.header__nav-mobile-link.current {
+  background: none !important;
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+/* Remove active page highlighting in desktop menu */
+.header__nav-link.active,
+.header__nav-link[aria-current="page"],
+.header__nav-link.current {
+  background: none !important;
+  color: var(--text) !important;
+}
+
+/* Keep special styling only for area-aluno button */
+.header__nav-link--area-aluno.active,
+.header__nav-link--area-aluno[aria-current="page"],
+.header__nav-mobile-link--area-aluno.active,
+.header__nav-mobile-link--area-aluno[aria-current="page"] {
+  background: linear-gradient(135deg, #b22222, #8b0000) !important;
+  color: var(--white) !important;
+}
+
 .header__nav-mobile-link i {
   font-size: 1.1rem;
   width: 20px;
@@ -346,8 +372,8 @@ body {
 /* Mobile Close Button */
 .header__mobile-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 2rem;
+  right: 2rem;
   background: rgba(0, 0, 0, 0.05);
   border: none;
   font-size: 1.25rem;
@@ -361,6 +387,7 @@ body {
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .header__mobile-close:hover {
@@ -439,6 +466,17 @@ body {
   
   .hero {
     padding-top: calc(65px * 0.3);
+  }
+  
+  .header__mobile-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header__nav-mobile-list {
+    padding-top: 4rem;
   }
 }
 
