@@ -9,7 +9,6 @@
     { "source": "/politica-privacidade", "destination": "/politica-privacidade.html" },
     { "source": "/termos-uso", "destination": "/termos-uso.html" },
     { "source": "/area-estudantes", "destination": "/area-estudantes/index.html" },
-    { "source": "/area-estudantes/caminho-estudante", "destination": "/area-estudantes/caminho-estudante.html" },
-    { "source": "/area-estudantes/graduacoes/siu-nim-tau-1", "destination": "/area-estudantes/graduacoes/siu-nim-tau-1.html" }
+    { "source": "/area-estudantes/caminho-estudante", "destination": "/area-estudantes/caminho-estudante.html" }
   ]
 } 
