@@ -229,7 +229,61 @@
     </section>
 
     <!-- ===================== MINI-SEÇÃO ISMA ===================== -->
-    
+
+    <!-- ===================== VÍDEOS DA ACADEMIA ===================== -->
+    <section id="videos" class="section section-videos" style="background:#f8f9fb;padding:2.5rem 0 2.5rem 0;">
+      <div class="container">
+        <h2 class="section-title" style="text-align:center;">Veja nossa academia em ação</h2>
+        <p style="max-width:720px;margin:0 auto 2rem auto;text-align:center;color:#2c3e50;">
+          Seleção de gravações curtas para apresentar o ambiente e a dinâmica dos treinos na UFF Blumenau.
+        </p>
+        <div class="videos-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;align-items:start;">
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 1.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 1</figcaption>
+          </figure>
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 2.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 2</figcaption>
+          </figure>
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 3.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 3</figcaption>
+          </figure>
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 4.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 4</figcaption>
+          </figure>
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 5.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 5</figcaption>
+          </figure>
+          <figure class="video-card" style="background:#000;border-radius:12px;overflow:hidden;margin:0;">
+            <video controls preload="metadata" playsinline muted poster="/assets/logo-uff.jpg" style="display:block;width:100%;height:auto;">
+              <source src="/assets/Videos/Video 6.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            <figcaption style="display:none">Treino 6</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer e WhatsApp serão inseridos automaticamente via componentes -->
@@ -256,6 +310,20 @@
       document.body.insertAdjacentHTML('beforeend', whatsappButton);
 
       // Scripts comuns já são inicializados automaticamente
+        // Garantir que apenas um vídeo toque por vez
+        (function ensureSingleVideoPlayback(){
+          const videos = document.querySelectorAll('.section-videos video');
+          if (!videos.length) return;
+          videos.forEach((v) => {
+            v.addEventListener('play', () => {
+              videos.forEach((other) => {
+                if (other !== v && !other.paused) {
+                  other.pause();
+                }
+              });
+            });
+          });
+        })();
     });
   </script>
 </body>
